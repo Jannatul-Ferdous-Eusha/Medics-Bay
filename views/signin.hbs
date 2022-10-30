@@ -13,7 +13,7 @@
 			crossorigin="anonymous"
 		/>
 
-		<title>Login</title>
+		<title>Signin</title>
 
 		<style>
 			* { padding: 0; margin: 0; box-sizing: border-box; } body {
@@ -24,7 +24,6 @@
 			border-radius: 4px; font-weight: bold; } .btn1:hover { background:
 			#c9d0d0; border: 1px solid; color: #035347; }
 		</style>
-
 	</head>
 
 	<body>
@@ -35,7 +34,7 @@
 					<div class="col-lg-5">
 						<img
 							style="height: 700px;"
-							src="/static/images/login.webp"
+							src="/static/images/signin.jpg"
 							class="img-fluid"
 							alt=""
 						/>
@@ -44,6 +43,17 @@
 						<h1 class="font-weight-bold py-4">MEDIC'S BAY</h1>
 						<h4>Sign into your Account</h4>
 						<form action="">
+							<div class="form-row">
+								<div class="col-lg-7">
+									<input
+										type="text"
+										placeholder="Name"
+										class="form-control my-3 p-3"
+										name=""
+										id=""
+									/>
+								</div>
+							</div>
 							<div class="form-row">
 								<div class="col-lg-7">
 									<input
@@ -68,11 +78,56 @@
 							</div>
 							<div class="form-row">
 								<div class="col-lg-7">
-									<button type="button" class="btn1 mt-3 mb-5">Login</button>
+									<input
+										type="password"
+										placeholder="Confirm Your Password"
+										class="form-control my-3 p-3"
+										name=""
+										id=""
+									/>
 								</div>
 							</div>
-							<a href="#">Forget Password</a>
-							<p>Login Another Way <a href="#">Whith google</a></p>
+							<div class="d-flex">
+								<div class="form-check" style="padding-right: 5px;">
+									<input
+										class="form-check-input"
+										type="radio"
+										name="flexRadioDefault"
+										id="flexRadioDefault1"
+									/>
+									<label class="form-check-label" for="flexRadioDefault1">
+										Male
+									</label>
+								</div>
+								<div class="form-check" style="padding-right: 5px;">
+									<input
+										class="form-check-input"
+										type="radio"
+										name="flexRadioDefault"
+										id="flexRadioDefault1"
+									/>
+									<label class="form-check-label" for="flexRadioDefault1">
+										Female
+									</label>
+								</div>
+								<div class="form-check" style="padding-right: 5px;">
+									<input
+										class="form-check-input"
+										type="radio"
+										name="flexRadioDefault"
+										id="flexRadioDefault1"
+									/>
+									<label class="form-check-label" for="flexRadioDefault1">
+										Other
+									</label>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="col-lg-7">
+									<button type="button" class="btn1 mt-3 mb-5">Signin</button>
+								</div>
+							</div>
+							<p>Already Have an Account? <a href="#">Login</a></p>
 						</form>
 					</div>
 				</div>

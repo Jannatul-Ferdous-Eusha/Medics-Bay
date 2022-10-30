@@ -1,60 +1,98 @@
 <html lang="en">
+
 	<head>
-		<title>Doctor's Profile</title>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		{{! Tailwindcss Cdn Link }}
-		<script src="https://cdn.tailwindcss.com"></script>
+		{{! Bootstrap css cdn link }}
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+			crossorigin="anonymous"
+		/>
 
-		<title>Doctors Profile</title>
+		<title>Specialist</title>
+
 	</head>
-	<body>
-		<div class="md:ml-20 bg-gradient-to-b from-teal-200 to-teal-100">
-			<div class="w-full mt-24">
-				<div class="min-[10px]:ml-24 md:ml-0 md:relative p-3 md:flex">
-					<div>
-						<img
-							class="ring-2 ring-black"
-							src="https://thumbs.dreamstime.com/b/default-placeholder-doctor-half-length-portrait-photo-avatar-gray-color-default-placeholder-doctor-half-length-portrait-114321003.jpg"
-							width="200"
-							alt="Doctors image"
-						/>
-					</div>
-					<div class="space-y-1 md:ml-8 md:space-y-5">
-						<h1 class="mt-5 text-3xl">Doctor's Name</h1>
-						<h2 class="">Short Qualifications</h2>
-						<h3 class="italic font-semibold">Position in hospital</h3>
-						<h4 class="text-lg">Department: Null</h4>
-					</div>
-					<div class="w-20 mt-4 md:absolute md:right-16 md:w-32 md:mt-6">
-						<img
-							src="https://i.pinimg.com/originals/21/13/31/2113312170c47428f4ce6b98a4392167.png"
-							alt="Appointment"
-							width="100%"
-						/>
-						<button
-							class="text-xs md:h-14 w-full text-white md:font-bold rounded md:text-base bg-teal-400 hover:bg-teal-600"
-						>Book Appointment</button>
+
+	<body style="background-color: #088875a1;">
+
+		{{>navbar}}
+
+		<div class="container">
+
+			<div
+				class="row justify-content-center py-5"
+				style="display: flex; align-items: center;"
+			>
+				<div class="col-md-6" style="max-width: 300px;">
+					<img
+						src="https://img.freepik.com/free-vector/doctor-character-background_1270-84.jpg?w=2000"
+						class="img-fluid"
+						alt=""
+					/>
+				</div>
+
+				<div class="col-md-6">
+					<div class="card-body" style="padding-top: 20px;">
+						<h5 class="card-title">Department: ENT</h5>
+						<p class="card-text fs-5">Dr. A F M Ekramuddaula , MBBS, FCPS (ENT),
+							MS (Otolaryngology) Coordinator & Senior Consultant</p>
+						<div class="d-grid gap-2 d-md-block">
+							<button
+								style="background-color: #035347; color: #c9d0d0; border-radius: 6px; padding-top: 5px; padding-bottom: 5px; padding-right: 10px; padding-left: 10px;"
+								type="button"
+							>Set up an appointment</button>
+
+						</div>
 					</div>
 				</div>
+
 			</div>
+
+			<div class="text-start fs-5 py-5">
+
+				<p>
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel ut
+					magnam, animi nobis similique sunt optio odit sapiente debitis fugiat
+					exercitationem odio deleniti sequi. Perferendis voluptates maiores
+					amet nesciunt inventore. Lorem ipsum dolor sit amet consectetur
+					adipisicing elit. Eaque amet voluptatibus animi. Eius expedita eveniet
+					blanditiis sapiente quas, enim maxime consectetur quasi voluptatem aut
+					dignissimos, reprehenderit voluptates minus praesentium dolorem! Lorem
+					ipsum dolor sit amet consectetur adipisicing elit. Corporis porro
+					aliquid quasi corrupti hic ipsa, voluptates harum dolore beatae. Id
+					consequatur porro ipsa harum animi quam distinctio enim optio culpa!
+				</p>
+
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
+					totam id saepe. Amet similique quam et adipisci quae eaque. Laborum
+					quas beatae, delectus ea fugiat harum perspiciatis recusandae neque
+					autem? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus
+					quos soluta, deserunt natus nesciunt cupiditate eaque, maiores
+					eligendi facere est voluptates sit obcaecati ea ut similique odio
+					rerum accusamus culpa. Lorem ipsum, dolor sit amet consectetur
+					adipisicing elit. Veniam temporibus minus dolorum dolores ea quam ut
+					tempora sit non? Iure quidem optio vero fuga delectus recusandae
+					facilis molestiae adipisci blanditiis!
+				</p>
+
+			</div>
+
 		</div>
-		<div class="md:ml-20 md:mr-14 mt-10">
-			<p class="py-5 font-medium">Desciptrion 1: Doctor example is a consultant
-				in sit amet consectetur adipisicing elit. Ducimus esse saepe quasi,
-				dicta rem nesciunt fugit enim in similique quas commodi dolorem
-				consectetur error. Nihil provident sit consectetur maxime placeat!</p>
-			<p class="font-medium">Desciptrion 2: He has past experience in this and
-				that hospital elit. Praesentium atque enim distinctio soluta aut fuga
-				dignissimos aliquam libero aspernatur? Optio mollitia culpa eius! Illum
-				magnam, doloribus officiis aliquid veritatis quasi.</p>
-			<p class="py-5 font-medium">Desciptrion 3: Doctor example currently sits
-				in this hospital and is available in these current times. Lorem ipsum
-				dolor sit amet, consectetur adipisicing elit. Ea sint quia vitae nisi
-				voluptates dolorum obcaecati nihil libero repellendus itaque repellat,
-				accusantium sunt esse est sapiente, ullam atque error. Mollitia!</p>
-		</div>
+
+		{{>footer}}
+
+		{{! Bootstrap js cdn link }}
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+			crossorigin="anonymous"
+		></script>
+
 	</body>
+
 </html>
