@@ -1,129 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
+<nav class="navbar navbar-expand-lg" style="background-color: #035347;">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <div class="container-fluid">
+      <div style="padding-right:50px;">
+        <h1 style="color: #c9d0d0;"">MEDIC'S BAY</h1>
+      </div>
 
-    <style>
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
+      <button class=" navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-5">
 
-        .dropdown-content a:hover {
-            background-color: #f1f1f1
-        }
+              <li class="nav-item">
+                <a class="nav-link" style="color: #c9d0d0;" aria-current="page" href="#">Home</a>
+              </li>
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-    </style>
-
-    <title>Navbar</title>
-</head>
-
-<body>
-    <nav class="fixed top-0 left-0 bg-teal-200 w-full shadow">
-        <div class="container m-auto flex justify-between items-center text-teal-900">
-            <h1 class="pl-8 py-4 text-3xl font-black">MEDIC'S BAY</h1>
-            <ul class="hidden md:flex items-center pr-10 text-base font-semibold cursor-pointer">
-                <li class="hover:bg-white py-4 px-6">Home</li>
-
-                <div class="dropdown">
-                    <button class="hover:bg-white py-4 px-6">Specialist</button>
-                    <div class="dropdown-content">
-                        <a href="#">Medicine</a>
-                        <a href="#">Cardiology</a>
-                        <a href="#">Dermatology</a>
-                        <a href="#">Dental</a>
-                        <a href="#">Gastrology</a>
-                        <a href="#">Gynaecology</a>
-                    </div>
-                </div>
-
-                <li class="hover:bg-white py-4 px-6">Review</li>
-                <li class="hover:bg-white py-4 px-6">About Us</li>
-                <li class="hover:bg-white py-4 px-6">Contact Us</li>
-                <li class="hover:bg-white py-4 px-6">Sign In</li>
-                <li class="hover:bg-white py-4 px-6">Log In</li>
-
-
-
-                <form>
-                    <label for="default-search"
-                        class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
-                    <div class="relative">
-                        <input type="search" id="default-search"
-                            class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="Search" required="">
-                        <button type="submit"
-                            class="text-white absolute right-2.5 bottom-2.5 bg-teal-900 hover:bg-teal-200 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
-                    </div>
-                </form>
-
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" style="color: #c9d0d0;" href="#" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Specialist
+                </a>
+                <ul class="dropdown-menu" style="background-color: #035347;">
+                  <li><a class="dropdown-item fs-5" style="color: #7a7e7d;" href="#">Medicine</a></li>
+                  <li><a class="dropdown-item fs-5" style="color: #7a7e7d;" href="#">Dermatologists</a></li>
+                  <li><a class="dropdown-item fs-5" style="color: #7a7e7d;" href="#">Cardiologists</a></li>
+                  <li><a class="dropdown-item fs-5" style="color: #7a7e7d;" href="#">Gastroenterologists</a></li>
+                  <li><a class="dropdown-item fs-5" style="color: #7a7e7d;" href="#">Urologists</a></li>
+                  <li><a class="dropdown-item fs-5" style="color: #7a7e7d;" href="#">DPsychiatrists</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="color: #c9d0d0;" aria-current="page" href="#">Review</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="color: #c9d0d0;" aria-current="page" href="#">About us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="color: #c9d0d0;" aria-current="page" href="#">Contact us</a>
+              </li>
 
             </ul>
 
-            <button class="block md:hidden py-3 px-4 mx-2 rounded focus:outline-none hover:bg-white group">
-                <div class="w-5 h-1 bg-teal-900 mb-1"></div>
-                <div class="w-5 h-1 bg-teal-900 mb-1"></div>
-                <div class="w-5 h-1 bg-teal-900"></div>
-                <div
-                    class="absolute top-0 -right-full h-screen w-8/12 bg-white border opacity-0 group-focus:right-0 group-focus:opacity-100 transition-all duration-300">
-                    <ul class="flex flex-col items-center w-full text-base cursor-pointer pt-10">
-                        <li class="hover:bg-teal-200 py-4 px-6 w-full">Home</li>
+            <ul class="justify-content-end navbar-nav fs-5" style="padding-right: 50px;">
 
-                        <div class="hover:bg-teal-200 py-4 px-6 w-full dropdown">
-                            <li>Specialist</li>
-                            <div class="dropdown-content">
-                                <a href="#">Medicine</a>
-                                <a href="#">Cardiology</a>
-                                <a href="#">Dermatology</a>
-                                <a href="#">Dental</a>
-                                <a href="#">Gastrology</a>
-                                <a href="#">Gynaecology</a>
-                            </div>
-                        </div>
+              <li class="nav-item">
+                <a class="nav-link" style="color: #c9d0d0;" aria-current="page" href="#">Sign in</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="color: #c9d0d0;" aria-current="page" href="#">Log in</a>
+              </li>
 
-                        <li class="hover:bg-teal-200 py-4 px-6 w-full">Review</li>
-                        <li class="hover:bg-teal-200 py-4 px-6 w-full">About Us</li>
-                        <li class="hover:bg-teal-200 py-4 px-6 w-full">Contact Us</li>
-                        <li class="hover:bg-teal-200 py-4 px-6 w-full">Sign In</li>
-                        <li class="hover:bg-teal-200 py-4 px-6 w-full">Log In</li>
-                    </ul>
-                    <div>
-                        <form>
-                            <input type="search" id="default-search"
-                                class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="Search" required="">
+            </ul>
 
-                    </div>
-                    </form>
+            <form class="d-flex" role="search fs-5">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-dark" style="color: #c9d0d0;" type="submit">Search</button>
+            </form>
 
-                </div>
-        </div>
-        </button>
-        </div>
-    </nav>
-</body>
-
-</html>
+          </div>
+      </div>
+  </nav>
