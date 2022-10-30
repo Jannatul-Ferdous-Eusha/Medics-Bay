@@ -1,0 +1,62 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		{{! Tailwindcss Cdn Link }}
+		<script src="https://cdn.tailwindcss.com"></script>
+
+		<title>User Profile</title>
+	</head>
+	<body
+		class="h-screen flex items-center justify-center bg-gradient-to-b from-teal-400 to-teal-100"
+	>
+		<div
+			class="grid grid-cols-[1fr,2fr] w-full h-full lg:w-11/12 lg:h-[91%] rounded-xl bg-white shadow-lg"
+		>
+			<div class="p-7">
+				<img
+					class="min-[10px]:mt-12 min-[10px]:rounded-md lg:mt-0 lg:rounded-full ring-4 ring-teal-300"
+					src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
+					alt="img"
+					width="70%"
+				/>
+			</div>
+			<div>
+				<h1 class="text-3xl font-semibold mt-12">User Name</h1>
+				<button
+					class="border h-8 w-36 mt-20 text-blue-400 border-blue-500 rounded font-semibold bg-transparent hover:bg-teal-400 hover:text-white hover:border-white"
+				> Dashboard </button>
+				<h3 class="pt-9 pb-9 text-lg font-thin">User Information</h3>
+				<table class="table-fixed">
+					<tbody>
+						<tr>
+							<td class="w-44 h-16">Phone</td>
+							<td>01234567899</td>
+						</tr>
+						<tr>
+							<td class="h-16">Email</td>
+							<td>example@eg.com</td>
+						</tr>
+						<tr>
+							<td class="h-16">Address</td>
+							<td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+								optio libero, officiis at fugiat unde beatae!</td>
+						</tr>
+						<tr>
+							<td class="h-16">Gender</td>
+							<td>Male/Female</td>
+						</tr>
+						<tr>
+							<td class="h-16">Date of Birth</td>
+							<td>10/10/10</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+
+	</body>
+</html>
