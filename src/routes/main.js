@@ -34,4 +34,8 @@ router.get('/specialist', (req, res) => {
     res.render("specialist");
 });
 
+router.get('/appointment', (req, res) => {
+    res.render("appointment");
+});
+
 module.exports = router;
