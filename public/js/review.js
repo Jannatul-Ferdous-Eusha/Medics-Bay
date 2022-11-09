@@ -1,32 +1,30 @@
-let sliderContainer = document.getElementById('sliderContainer');
-let slider = document.getElementById('slider');
-let cards = slider.getElementsByTagName('li');
 
-if (document.body.clientWidth < 800) {
-    elementsToShow = 1;
-} else if (document.body.clientWidth < 1100) {
-    elementsToShow = 2;
-} else {
-    elementsToShow = 3;
-}
-
-let sliderContainerWidth = sliderContainer.clientWidth;
-
-let cardWidth = sliderContainerWidth / elementsToShow;
-
-slider.style.width = cards.length * cardWidth + 'px';
-slider.style.transition = 'margin';
-slider.style.transitionDuration = '0.8s';
-
-for (let index = 0; index < cards.length; index++) {
-    const element = cards[index];
-    element.style.width = cardWidth + 'px';
-}
-
-function prev() {
-    slider.style.marginLeft = ((+slider.style.marginLeft.slice(0, -2)) + cardWidth) + 'px';
-}
-
-function next() {
-    slider.style.marginLeft = ((+slider.style.marginLeft.slice(0, -2)) - cardWidth) + 'px';
-}
+var multipleCardCarousel = document.querySelector(
+    "#carouselExampleControls"
+  );
+  if (window.matchMedia("(min-width: 768px)").matches) {
+    var carouselWidth = $(".carousel-inner")[0].scrollWidth;
+    var cardWidth = $(".carousel-item").width();
+    var scrollPosition = 0;
+    $("#carouselExampleControls .carousel-control-next").on("click", function () {
+        console.log("next");
+        if (scrollPosition < carouselWidth - cardWidth * 4) {
+        scrollPosition += cardWidth;
+        $("#carouselExampleControls .carousel-inner").animate(
+          { scrollLeft: scrollPosition },
+          600
+        );
+      }
+    });
+    $("#carouselExampleControls .carousel-control-prev").on("click", function () {
+      if (scrollPosition > 0) {
+        scrollPosition -= cardWidth;
+        $("#carouselExampleControls .carousel-inner").animate(
+          { scrollLeft: scrollPosition },
+          600
+        );
+      }
+    });
+  } else {
+    $(multipleCardCarousel).addClass("slide");
+  }
