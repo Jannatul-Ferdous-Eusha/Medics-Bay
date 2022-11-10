@@ -16,63 +16,103 @@
 		<title>Login</title>
 
 		<style>
-			* { padding: 0; margin: 0; box-sizing: border-box; } body {
-			background-color: #035347; } .row { margin-top: 70px; background-color:
-			#c9d0d0; border-radius: 30px; } img { border-top-left-radius: 30px;
-			border-bottom-left-radius: 30px; } .btn1 { border: none; outline: none;
-			height: 50px; width: 100%; background-color: #035347; color: #c9d0d0;
-			border-radius: 4px; font-weight: bold; } .btn1:hover { background:
-			#c9d0d0; border: 1px solid; color: #035347; }
+			* { padding: 0; margin: 0; box-sizing: border-box; } 
+			body {
+			background-color: #f8fafb; } 
+			.row { margin-top: 70px; border-radius: 30px; } 
+			h1,h6{
+				text-align: center;
+			}
+			h4{
+				margin-top: 30px;
+				margin-bottom: 50px;
+				
+			}
+			.radioclass{
+				margin-top: 9px;
+			}
+			.btn1 { border: none; outline: none;
+			height: 50px; width: 100%; max-width: 400px; background-color: #1cc3b2; color: white;
+			border-radius: 6px; font-weight: bold; transition: transform .3s; } 
+			.btn1:hover {
+				transform: scale(1.03);
+			}
+			.headtext2{
+				color: #1cc3b2;
+			}
+			.login{
+				margin-right: 10px;
+			}
 		</style>
 
 	</head>
 
 	<body>
-
-		<section class="Form my-4 mx-5">
+		{{>navbar}}
+		<section class="Form my-4">
 			<div class="container">
 				<div class="row no-gutters">
-					<div class="col-lg-5">
+					<div class="col-md-7 d-none d-md-flex justify-content-center align-items-center">
 						<img
-							style="height: 700px;"
-							src="/static/images/login.webp"
+							style="width: 80%;"
+							src="/static/images/login.png"
 							class="img-fluid"
 							alt=""
 						/>
 					</div>
-					<div class="col-lg-7 px-5 pt-5">
-						<h1 class="font-weight-bold py-4">MEDIC'S BAY</h1>
-						<h4>Sign into your Account</h4>
+					<div class="col-md-5 pt-4 px-5">
+						<h1 class="text-center fw-bold display-5">MEDIC'S <span class="headtext2">BAY</span> </h1>
+						<h4>Log In</h4>
 						<form action="">
 							<div class="form-row">
-								<div class="col-lg-7">
+								<div class="col-md-12">
 									<input
 										type="email"
 										placeholder="Enter Your Email"
-										class="form-control my-3 p-3"
+										class="form-control my-2 p-3"
 										name=""
 										id=""
 									/>
 								</div>
 							</div>
 							<div class="form-row">
-								<div class="col-lg-7">
+								<div class="col-md-12">
 									<input
 										type="password"
 										placeholder="Enter Your Password"
-										class="form-control my-3 p-3"
+										class="form-control my-2 p-3"
 										name=""
 										id=""
 									/>
 								</div>
 							</div>
-							<div class="form-row">
-								<div class="col-lg-7">
-									<button type="button" class="btn1 mt-3 mb-5">Login</button>
+							<div class="row radioclass">
+								<div class="col-6">
+									<input class="form-check-input" type="checkbox" 
+									value="" id="">
+									<label class="form-check-label" for="flexCheckDefault">
+										Remember Me
+									</label>
+								</div>
+								<div class="col-6 d-flex justify-content-end">
+									<a href="#" class="text-muted"><u>Forget Password</u></a>
 								</div>
 							</div>
-							<a href="#">Forget Password</a>
-							<p>Login Another Way <a href="#">Whith google</a></p>
+							<div class="form-row">
+								<div class="col-md-12 d-flex justify-content-center">
+									<button type="button" class="btn1 mt-5 mb-3">Log In</button>
+								</div>
+							</div>
+							<h6 class="text-muted">OR</h6>
+							
+								<div class="d-flex">
+									<p class="login">Login with</p>
+									<a href="#">
+										<svg xmlns="http://www.w3.org/2000/svg" width="19px" height="19px" viewBox="0 0 488 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/></svg>
+									</a>
+								</div>
+							
+							
 						</form>
 					</div>
 				</div>
@@ -85,7 +125,7 @@
 			integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
 			crossorigin="anonymous"
 		></script>
-
+	{{>footer}}
 	</body>
 
 </html>
