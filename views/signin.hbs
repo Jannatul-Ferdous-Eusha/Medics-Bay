@@ -13,7 +13,7 @@
 			crossorigin="anonymous"
 		/>
 
-		<title>Signin</title>
+		<title>Sign Up</title>
 
 		<style>
 			* { padding: 0; margin: 0; box-sizing: border-box; } body {
@@ -63,15 +63,15 @@
 						<div class="card py-3 px-5">
 						<h1 class="text-center fw-bold display-5">MEDIC'S <span class="headtext2">BAY</span> </h1>
 						<h4>Register Account</h4>
-						<form action="">
+						<form action="/register" method="POST">
 							<div class="form-row">
 								<div class="col-md-12">
 									<input
 										type="text"
 										placeholder="Full Name"
 										class="form-control my-3 p-3"
-										name=""
-										id=""
+										name="fname"
+										value=""
 									/>
 								</div>
 							</div>
@@ -81,7 +81,8 @@
 										type="email"
 										placeholder="Enter Your Email"
 										class="form-control my-3 p-3"
-										name=""
+										name="email"
+										value=""
 										id=""
 									/>
 								</div>
@@ -92,8 +93,9 @@
 										type="password"
 										placeholder="Enter Your Password"
 										class="form-control my-3 p-3"
-										name=""
-										id=""
+										name="pass"
+										value=''
+										
 									/>
 								</div>
 							</div>
@@ -103,18 +105,19 @@
 										type="password"
 										placeholder="Confirm Your Password"
 										class="form-control my-3 p-3"
-										name=""
-										id=""
+										name="repass"
+										value=''
 									/>
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="col-md-12">
 									<input
-										type="text"
+										type="number"
 										placeholder="Contact No."
 										class="form-control my-3 p-3"
-										name=""
+										name="phone"
+										value=""
 										id=""
 									/>
 								</div>
@@ -125,7 +128,8 @@
 										type="text"
 										placeholder="Enter Your Address"
 										class="form-control my-3 p-3"
-										name=""
+										name="address"
+										value=""
 										id=""
 									/>
 								</div>
@@ -135,7 +139,8 @@
 									<input
 										class="form-check-input"
 										type="radio"
-										name="flexRadioDefault"
+										name="gender"
+										value="Male"
 										id="flexRadioDefault1"
 									/>
 									<label class="form-check-label" for="flexRadioDefault1">
@@ -146,7 +151,8 @@
 									<input
 										class="form-check-input"
 										type="radio"
-										name="flexRadioDefault"
+										name="gender"
+										value="Female"
 										id="flexRadioDefault1"
 									/>
 									<label class="form-check-label" for="flexRadioDefault1">
@@ -157,7 +163,8 @@
 									<input
 										class="form-check-input"
 										type="radio"
-										name="flexRadioDefault"
+										name="gender"
+										value="Other"
 										id="flexRadioDefault1"
 									/>
 									<label class="form-check-label" for="flexRadioDefault1">
@@ -174,7 +181,7 @@
 							</div>
 							<div class="form-row">
 								<div class="col-md-12 d-flex justify-content-center">
-									<button type="button" class="btn1 mt-3 mb-4">Sign Up</button>
+									<input type="submit" class="btn1 mt-3 mb-4" value="Sign Up"/>
 								</div>
 							</div>
 							<p>Already Have an Account? <a href="#">Login</a></p>
