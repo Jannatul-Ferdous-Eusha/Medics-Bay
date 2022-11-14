@@ -43,6 +43,58 @@
 				color: #1cc3b2;
 			}
 		</style>
+
+		{{!-- Form validation --}}
+		<script>
+        function validateForm() {
+            let x = document.forms["regForm"]["fname"].value;
+			let y = document.forms["regForm"]["email"].value;
+            let z1 = document.forms["regForm"]["pass"].value;
+            let z2 = document.forms["regForm"]["repass"].value;
+            let a = document.forms["regForm"]["gender"].value;
+            let b = document.forms["regForm"]["address"].value;
+            let c = document.forms["regForm"]["phone"].value;
+            if(x == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+			else if(!/\s/.test(x)){
+				alert("Please enter your FULL name");
+                return false;
+			}
+            else if(y==""){
+            alert("Email must be filled out");
+                return false;
+            }
+            else if(z1.length<8 || z1.length>32){
+            alert("Password length must be between 8 and 32 characters");
+                return false;
+            }
+            else if(z1!=z2){
+            alert("Passwords do not match");
+                return false;
+            }
+			else if(c==""){
+            alert("Please fill out your contact number");
+                return false;
+            }
+            else if(b==""){
+            alert("Please fill out your address");
+                return false;
+            }
+            else if(a==""){
+            alert("Please select your gender");
+                return false;
+            }
+            else{
+                console.log("Form validated");
+                return true;
+            }
+
+          
+        }
+        </script>
+
 	</head>
 
 	<body>
@@ -63,7 +115,7 @@
 						<div class="card py-3 px-5">
 						<h1 class="text-center fw-bold display-5">MEDIC'S <span class="headtext2">BAY</span> </h1>
 						<h4>Register Account</h4>
-						<form action="/register" method="POST">
+						<form name="regForm" action="/register" onsubmit="return validateForm()" method="POST">
 							<div class="form-row">
 								<div class="col-md-12">
 									<input
