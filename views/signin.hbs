@@ -13,76 +13,175 @@
 			crossorigin="anonymous"
 		/>
 
-		<title>Signin</title>
+		<title>Sign Up</title>
 
 		<style>
 			* { padding: 0; margin: 0; box-sizing: border-box; } body {
-			background-color: #035347; } .row { margin-top: 70px; background-color:
-			#c9d0d0; border-radius: 30px; } img { border-top-left-radius: 30px;
-			border-bottom-left-radius: 30px; } .btn1 { border: none; outline: none;
-			height: 50px; width: 100%; background-color: #035347; color: #c9d0d0;
-			border-radius: 4px; font-weight: bold; } .btn1:hover { background:
-			#c9d0d0; border: 1px solid; color: #035347; }
+				background-color: #f8fafb;
+			} .row { margin-top: 30px; border-radius: 30px; } 
+			.btn1 { border: none; outline: none;
+			height: 50px; width: 100%; max-width: 400px; background-color: #1cc3b2; color: white;
+			border-radius: 6px; font-weight: bold; transition: transform .3s; } 
+			.card{
+				border: 1px solid transparent;
+				backdrop-filter: blur(1.3rem);
+				box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.103);
+				background: linear-gradient(to right bottom, rgb(255, 255, 255), rgb(255, 255, 255));
+			}
+			.btn1:hover {
+				transform: scale(1.03);
+			}
+			h1,h6{
+				text-align: center;
+			}
+			h4{
+				margin-top: 30px;
+				margin-bottom: 30px;
+				
+			}
+			.headtext2{
+				color: #1cc3b2;
+			}
 		</style>
+
+		{{!-- Form validation --}}
+		<script>
+        function validateForm() {
+            let x = document.forms["regForm"]["fname"].value;
+			let y = document.forms["regForm"]["email"].value;
+            let z1 = document.forms["regForm"]["pass"].value;
+            let z2 = document.forms["regForm"]["repass"].value;
+            let a = document.forms["regForm"]["gender"].value;
+            let b = document.forms["regForm"]["address"].value;
+            let c = document.forms["regForm"]["phone"].value;
+            if(x == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+			else if(!/\s/.test(x)){
+				alert("Please enter your FULL name");
+                return false;
+			}
+            else if(y==""){
+            alert("Email must be filled out");
+                return false;
+            }
+            else if(z1.length<8 || z1.length>32){
+            alert("Password length must be between 8 and 32 characters");
+                return false;
+            }
+            else if(z1!=z2){
+            alert("Passwords do not match");
+                return false;
+            }
+			else if(c==""){
+            alert("Please fill out your contact number");
+                return false;
+            }
+            else if(b==""){
+            alert("Please fill out your address");
+                return false;
+            }
+            else if(a==""){
+            alert("Please select your gender");
+                return false;
+            }
+            else{
+                console.log("Form validated");
+                return true;
+            }
+
+          
+        }
+        </script>
+
 	</head>
 
 	<body>
-
-		<section class="Form my-4 mx-5">
+		{{>navbar}}
+		<section class="Form">
 			<div class="container">
 				<div class="row no-gutters">
-					<div class="col-lg-5">
+					<div class="col-md-5 d-none d-md-flex justify-content-center align-items-center">
 						<img
-							style="height: 700px;"
-							src="/static/images/signin.jpg"
+							style="width: 100%;"
+							src="/static/images/signin_bg.png"
 							class="img-fluid"
 							alt=""
 						/>
 					</div>
-					<div class="col-lg-7 px-5 pt-5">
-						<h1 class="font-weight-bold py-4">MEDIC'S BAY</h1>
-						<h4>Sign into your Account</h4>
-						<form action="">
+					
+					<div class="col-md-7">
+						<div class="card py-3 px-5">
+						<h1 class="text-center fw-bold display-5">MEDIC'S <span class="headtext2">BAY</span> </h1>
+						<h4>Register Account</h4>
+						<form name="regForm" action="/register" onsubmit="return validateForm()" method="POST">
 							<div class="form-row">
-								<div class="col-lg-7">
+								<div class="col-md-12">
 									<input
 										type="text"
-										placeholder="Name"
+										placeholder="Full Name"
 										class="form-control my-3 p-3"
-										name=""
-										id=""
+										name="fname"
+										value=""
 									/>
 								</div>
 							</div>
 							<div class="form-row">
-								<div class="col-lg-7">
+								<div class="col-md-12">
 									<input
 										type="email"
 										placeholder="Enter Your Email"
 										class="form-control my-3 p-3"
-										name=""
+										name="email"
+										value=""
 										id=""
 									/>
 								</div>
 							</div>
 							<div class="form-row">
-								<div class="col-lg-7">
+								<div class="col-md-12">
 									<input
 										type="password"
 										placeholder="Enter Your Password"
 										class="form-control my-3 p-3"
-										name=""
+										name="pass"
+										value=''
+										
+									/>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="col-md-12">
+									<input
+										type="password"
+										placeholder="Confirm Your Password"
+										class="form-control my-3 p-3"
+										name="repass"
+										value=''
+									/>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="col-md-12">
+									<input
+										type="number"
+										placeholder="Contact No."
+										class="form-control my-3 p-3"
+										name="phone"
+										value=""
 										id=""
 									/>
 								</div>
 							</div>
 							<div class="form-row">
-								<div class="col-lg-7">
+								<div class="col-md-12">
 									<input
-										type="password"
-										placeholder="Confirm Your Password"
+										type="text"
+										placeholder="Enter Your Address"
 										class="form-control my-3 p-3"
-										name=""
+										name="address"
+										value=""
 										id=""
 									/>
 								</div>
@@ -92,7 +191,8 @@
 									<input
 										class="form-check-input"
 										type="radio"
-										name="flexRadioDefault"
+										name="gender"
+										value="Male"
 										id="flexRadioDefault1"
 									/>
 									<label class="form-check-label" for="flexRadioDefault1">
@@ -103,7 +203,8 @@
 									<input
 										class="form-check-input"
 										type="radio"
-										name="flexRadioDefault"
+										name="gender"
+										value="Female"
 										id="flexRadioDefault1"
 									/>
 									<label class="form-check-label" for="flexRadioDefault1">
@@ -114,7 +215,8 @@
 									<input
 										class="form-check-input"
 										type="radio"
-										name="flexRadioDefault"
+										name="gender"
+										value="Other"
 										id="flexRadioDefault1"
 									/>
 									<label class="form-check-label" for="flexRadioDefault1">
@@ -123,12 +225,20 @@
 								</div>
 							</div>
 							<div class="form-row">
-								<div class="col-lg-7">
-									<button type="button" class="btn1 mt-3 mb-5">Signin</button>
+								<div class="col-md-12 my-2">
+									<label for="birthday">Date of Birth:</label>
+									<input type="date" id="birthday" value="1999-10-20" name="birthday">
+									
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="col-md-12 d-flex justify-content-center">
+									<input type="submit" class="btn1 mt-3 mb-4" value="Sign Up"/>
 								</div>
 							</div>
 							<p>Already Have an Account? <a href="#">Login</a></p>
 						</form>
+					</div>
 					</div>
 				</div>
 			</div>
@@ -140,7 +250,7 @@
 			integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
 			crossorigin="anonymous"
 		></script>
-
+	
 	</body>
 
 </html>
