@@ -19,7 +19,7 @@ router.get('/logout', auth, async(req, res) => {
         res.clearCookie("jwt");
         console.log("User logged out successfully");
         await req.user.save();
-        res.redirect("aboutus");
+        res.redirect("/");
     } catch (error) {
         res.status(500).send("error in logout "+ error);
     }

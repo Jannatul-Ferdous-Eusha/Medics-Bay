@@ -75,7 +75,9 @@ app.post("/login", async(req,res) =>{
         const pass=req.body.pass;
         const userLoggedInCreds=await Register.findOne({email:email}); //first email is of the db field second is of the user input
         if(userLoggedInCreds==null){
-            res.send("Invalid email or password");
+            res.render("login",{
+                msg: "Invalid email or password"
+            });
         }else{
             if(userLoggedInCreds.password===pass){
                 console.log("User logged in successfully");
@@ -86,7 +88,9 @@ app.post("/login", async(req,res) =>{
                 });
                 res.status(201).redirect("user-profile");
             }else{
-                res.status(400).send("Invalid email or password");
+                res.render("login",{
+                    msg: "Invalid email or password"
+                });
             }
         }
     } catch (error) {
