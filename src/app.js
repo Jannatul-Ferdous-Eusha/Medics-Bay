@@ -72,8 +72,8 @@ app.post("/login", async(req,res) =>{
                     expires:new Date(Date.now()+300000), //expires in 5 mins
                     httpOnly: true    //client side can not delete cookie
                 });
-                //to get the cookie stored: req.cookies.jwt 3rd value is the name of cookie.
-                res.status(201).render("user-profile");
+                
+                res.status(201).redirect("user-profile");
             }else{
                 res.status(400).send("Invalid email or password");
             }

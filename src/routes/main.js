@@ -17,7 +17,6 @@ router.get('/logout', auth, async(req, res) => {
             return currToken.token !== req.token;
         })
         res.clearCookie("jwt");
-
         console.log("User logged out successfully");
         await req.user.save();
         res.render("aboutus");
@@ -39,7 +38,14 @@ router.get('/review', (req, res) => {
 });
 
 router.get('/user-profile', auth, (req, res) => {
-    res.render("user-profile");
+    res.render("user-profile",{
+    username: req.user.fullname,   //data to show in user profile
+    phone: req.user.phone,
+    email1: req.user.email,
+    dob: req.user.birthday,
+    gender: req.user.gender,
+    address: req.user.address
+    });
 });
 
 router.get('/aboutus', (req, res) => {
