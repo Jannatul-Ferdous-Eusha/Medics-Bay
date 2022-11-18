@@ -19,7 +19,7 @@ router.get('/logout', auth, async(req, res) => {
         res.clearCookie("jwt");
         console.log("User logged out successfully");
         await req.user.save();
-        res.render("aboutus");
+        res.redirect("aboutus");
     } catch (error) {
         res.status(500).send("error in logout "+ error);
     }
@@ -42,7 +42,7 @@ router.get('/user-profile', auth, (req, res) => {
     username: req.user.fullname,   //data to show in user profile
     phone: req.user.phone,
     email1: req.user.email,
-    dob: req.user.birthday,
+    dob: req.user.birthday.toLocaleDateString(),
     gender: req.user.gender,
     address: req.user.address
     });

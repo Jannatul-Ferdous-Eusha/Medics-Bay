@@ -17,6 +17,18 @@ app.use(cookieParser());
 // Path setting for Image, css and js
 app.use('/static', express.static("public"));
 
+// dynamic header login logout
+app.use(function(req,res,next){ 
+    const token=req.cookies.jwt;
+    if(token==null){
+        res.locals.isAuthenticated=false;
+    }else{
+        res.locals.isAuthenticated=true;
+    }
+    
+    next();
+})
+
 app.use('', routes);
 
 //template engine (hbs)
@@ -49,7 +61,7 @@ app.post("/register", async(req,res) =>{
         //data "get" done now save it
         const registered = await registerUser.save();
         console.log("User registered successfully");
-        res.status(201).render("index");
+        res.status(201).redirect("index");
     } catch (error) {
         res.status(400).send(error);
         console.log(error);
@@ -70,9 +82,8 @@ app.post("/login", async(req,res) =>{
                 const token=await userLoggedInCreds.generateAuthToken();
                 res.cookie("jwt",token,{
                     expires:new Date(Date.now()+300000), //expires in 5 mins
-                    httpOnly: true    //client side can not delete cookie
+                    httpOnly: true,    //client side can not delete cookie
                 });
-                
                 res.status(201).redirect("user-profile");
             }else{
                 res.status(400).send("Invalid email or password");
