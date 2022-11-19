@@ -1,4 +1,5 @@
 const express = require('express');
+const auth=require("../middleware/auth");
 
 const router = express.Router();
 
@@ -8,6 +9,20 @@ router.get('/', (req, res) => {
 
 router.get('/login', (req, res) => {
     res.render("login");
+});
+
+router.get('/logout', auth, async(req, res) => {
+    try {
+        req.user.tokens=req.user.tokens.filter((currToken)=>{
+            return currToken.token !== req.token;
+        })
+        res.clearCookie("jwt");
+        console.log("User logged out successfully");
+        await req.user.save();
+        res.redirect("/");
+    } catch (error) {
+        res.status(500).send("error in logout "+ error);
+    }
 });
 
 router.get('/signin', (req, res) => {
@@ -22,8 +37,15 @@ router.get('/review', (req, res) => {
     res.render("review");
 });
 
-router.get('/user-profile', (req, res) => {
-    res.render("user-profile");
+router.get('/user-profile', auth, (req, res) => {
+    res.render("user-profile",{
+    username: req.user.fullname,   //data to show in user profile
+    phone: req.user.phone,
+    email1: req.user.email,
+    dob: req.user.birthday.toLocaleDateString(),
+    gender: req.user.gender,
+    address: req.user.address
+    });
 });
 
 router.get('/aboutus', (req, res) => {
