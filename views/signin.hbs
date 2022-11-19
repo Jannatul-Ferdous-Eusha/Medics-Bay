@@ -42,6 +42,11 @@
 			.headtext2{
 				color: #1cc3b2;
 			}
+			.msg{
+				margin-top: 0;
+				margin-bottom: 0;
+				color: red;
+			}
 		</style>
 
 		{{!-- Form validation --}}
@@ -116,6 +121,7 @@
 						<form name="regForm" action="/register" onsubmit="return validateForm()" method="POST">
 							<div class="form-row">
 								<div class="col-md-12">
+									<p class="msg">{{msg}}</p>
 									<input
 										type="text"
 										placeholder="Full Name"

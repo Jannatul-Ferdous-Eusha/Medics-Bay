@@ -48,7 +48,15 @@ app.post("/register", async(req,res) =>{
             gender: req.body.gender,
             birthday: req.body.birthday
         })
-
+        const email=req.body.email;
+        //check if user exists
+        const userExists=await Register.findOne({email:email});
+        if(userExists!=null){
+            res.render("signin",{
+                msg: "Email address is already registered"
+            });
+        }else{
+            console.log("user not exists");
         //generate jwt
         const token=await registerUser.generateAuthToken();
 
@@ -61,7 +69,8 @@ app.post("/register", async(req,res) =>{
         //data "get" done now save it
         const registered = await registerUser.save();
         console.log("User registered successfully");
-        res.status(201).redirect("index");
+        res.status(201).redirect("/");
+        }
     } catch (error) {
         res.status(400).send(error);
         console.log(error);
