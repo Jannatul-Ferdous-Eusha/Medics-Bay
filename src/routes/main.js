@@ -1,5 +1,5 @@
 const express = require('express');
-const auth=require("../middleware/auth");
+const auth = require("../middleware/auth");
 
 const router = express.Router();
 
@@ -11,9 +11,9 @@ router.get('/login', (req, res) => {
     res.render("login");
 });
 
-router.get('/logout', auth, async(req, res) => {
+router.get('/logout', auth, async (req, res) => {
     try {
-        req.user.tokens=req.user.tokens.filter((currToken)=>{
+        req.user.tokens = req.user.tokens.filter((currToken) => {
             return currToken.token !== req.token;
         })
         res.clearCookie("jwt");
@@ -21,7 +21,7 @@ router.get('/logout', auth, async(req, res) => {
         await req.user.save();
         res.redirect("/");
     } catch (error) {
-        res.status(500).send("error in logout "+ error);
+        res.status(500).send("error in logout " + error);
     }
 });
 
@@ -38,13 +38,13 @@ router.get('/review', (req, res) => {
 });
 
 router.get('/user-profile', auth, (req, res) => {
-    res.render("user-profile",{
-    username: req.user.fullname,   //data to show in user profile
-    phone: req.user.phone,
-    email1: req.user.email,
-    dob: req.user.birthday.toLocaleDateString(),
-    gender: req.user.gender,
-    address: req.user.address
+    res.render("user-profile", {
+        username: req.user.fullname,   //data to show in user profile
+        phone: req.user.phone,
+        email1: req.user.email,
+        dob: req.user.birthday.toLocaleDateString(),
+        gender: req.user.gender,
+        address: req.user.address
     });
 });
 
@@ -58,6 +58,10 @@ router.get('/specialist', (req, res) => {
 
 router.get('/appointment', (req, res) => {
     res.render("appointment");
+});
+
+router.get('/dashboard', (req, res) => {
+    res.render("dashboard");
 });
 
 module.exports = router;

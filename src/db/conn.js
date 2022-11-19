@@ -1,7 +1,7 @@
-const mongoose=require("mongoose");
+const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/medicsbay").then(()=>{
+mongoose.connect("mongodb://localhost:27017/medicsbay").then(() => {
     console.log("Database connected successfully!");
-}).catch((e)=>{
+}).catch((e) => {
     console.log("Database not connected error. " + e);
 })
