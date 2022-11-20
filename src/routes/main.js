@@ -1,5 +1,6 @@
 const express = require('express');
 const auth = require("../middleware/auth");
+const Specialist = require('../models/Specialist');
 
 const router = express.Router();
 
@@ -52,8 +53,13 @@ router.get('/aboutus', (req, res) => {
     res.render("aboutus");
 });
 
-router.get('/specialist', (req, res) => {
-    res.render("specialist");
+router.get("/specialist", async (req, res) => {
+    const medicine = await Specialist.find()
+    // console.log(medicine);
+
+    res.render("specialist", {
+        medicine: medicine,
+    });
 });
 
 router.get('/appointment', (req, res) => {

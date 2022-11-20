@@ -27,6 +27,8 @@
 			<h1 class="text-center">All Available Doctors</h1>
 		</div>
 
+{{#each medicine}}
+
 		<div
 			style="display: flex;  justify-content: center;
   align-items: center;"
@@ -42,9 +44,8 @@
 					</div>
 					<div class="col-md-8">
 						<div class="card-body" style="padding-top: 70px;">
-							<h5 class="card-title">Department: ENT</h5>
-							<p class="card-text">Dr. A F M Ekramuddaula , MBBS, FCPS (ENT), MS
-								(Otolaryngology) Coordinator & Senior Consultant</p>
+							<h5 class="card-title">Department: {{this.department}}</h5>
+							<p class="card-text">{{this.description}}</p>
 							<div class="d-grid gap-2 d-md-block">
 								<a href="/appointment">
 									<button
@@ -66,6 +67,8 @@
 
 		</div>
 
+		{{/each}}
+{{!-- 
 		<div
 			style="display: flex;  justify-content: center;
       align-items: center;"
@@ -149,7 +152,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> --}}
 
         {{>footer}}
 

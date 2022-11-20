@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 require("./db/conn");
 const Register = require("./models/register");
 const cookieParser = require("cookie-parser");
-
+const Specialist = require("./models/Specialist");
 const routes = require("./routes/main");
 
 //get user details in json(2), for cookies(3rd)
@@ -106,6 +106,21 @@ app.post("/login", async (req, res) => {
         res.status(400).send(error)
     }
 })
+
+// Specialist.create([
+//     {
+//         department: 'Medicine',
+//         description: 'Dr. A F M Ekramuddaula , MBBS, FCPS (ENT), MS (Otolaryngology) Coordinator & Senior Consultant'
+//     },
+//     {
+//         department: 'Medicine',
+//         description: 'Dr. Mita , MBBS, FCPS (ENT), MS (Otolaryngology) Coordinator & Senior Consultant'
+//     },
+//     {
+//         department: 'Medicine',
+//         description: 'Dr. Rakib , MBBS, FCPS (ENT), MS (Otolaryngology) Coordinator & Senior Consultant'
+//     },
+// ])
 
 app.listen(process.env.PORT | 3000, () => {
     console.log("Server Start");
